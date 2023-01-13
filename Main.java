@@ -1,3 +1,5 @@
+import Parser.Parser;
+import UI.MessagePanel;
 import com.formdev.flatlaf.FlatDarculaLaf;
 
 import javax.swing.*;
@@ -15,10 +17,20 @@ public class Main {
 
         window.plotButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                int[] coefficients = Parser.Parser.parseStringToCoefficients(window.inputTextField.getText());
-                window.plotPane = Plotter.Plotter.getPlotPlaneFromCoefficients(coefficients);
-                window.repaint();
-                window.pack();
+
+                String input = window.inputTextField.getText();
+                int validity = Parser.getValidity(input);
+
+                if(validity == 0){
+                    int[] coefficients = Parser.parseStringToCoefficients(window.inputTextField.getText());
+                    window.plotPane = Plotter.Plotter.getPlotPlaneFromCoefficients(coefficients);
+                    window.repaint();
+                    window.pack();
+                }else{
+                    window.plotPane = new MessagePanel("Fehler " + validity);
+                    System.out.println("hallo");
+                }
+
             }
         });
     }

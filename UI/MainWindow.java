@@ -97,6 +97,7 @@ public class MainWindow extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
 
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MainWindow().setVisible(true);

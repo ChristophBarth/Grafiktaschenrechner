@@ -4,6 +4,11 @@
  */
 package UI;
 
+import java.util.Map;
+
+import static java.util.Map.entry;
+
+
 /**
  *
  * @author christophbarth
@@ -13,9 +18,17 @@ public class MessagePanel extends javax.swing.JPanel {
     /**
      * Creates new form message_panel
      */
-    public MessagePanel(String message) {
+    public MessagePanel(int state) {
         initComponents();
-        this.message.setText(message);
+        if(state == -1){
+            this.message.setText("Error: Illegal Character");
+        }else if(state == 1){
+            this.message.setText("Syntax Error");
+        }else{
+            this.message.setText("Error " + state);
+        }
+
+        this.setVisible(true);
     }
 
     /**

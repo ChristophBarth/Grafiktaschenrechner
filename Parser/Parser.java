@@ -1,9 +1,9 @@
 package Parser;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Parser {
-    public static int[] parseStringToCoefficients(String input){
-        return(null);
-    }
 
     public static int getValidity(String input){
         int zustand =0;
@@ -11,7 +11,7 @@ public class Parser {
         int[] endzustaende = {10, 15, 12, 2, 14, 6, 16, 5};
 
         for(int i=0;i<input.length();i++){
-           zustand = folgeZustand(zustand, input.charAt(i));
+            zustand = folgeZustand(zustand, input.charAt(i));
         }
 
         for(int i=0;i<endzustaende.length;i++){
@@ -29,7 +29,9 @@ public class Parser {
                 else if (zeichen == '+' || zeichen == '-') return 8;
                 else if (zeichen == '.' || zeichen == '/' || zeichen == '^') return 1;
                 else if (zeichen == '0') return 15;
-                else if (zeichen >= '1' && zeichen <= '9') return 5;
+                else if (zeichen >= '1' && zeichen <= '9'){
+                    return 5;
+                }
                 else if (zeichen == 'x') return 2;
                 else return -1;
             case 1:
@@ -44,7 +46,8 @@ public class Parser {
                 else return -1;
             case 11:
                 if (zeichen == 'x') return 2;
-                else return -1; //TODO: Fallunterscheidung!
+                else if(zeichen == '-' || zeichen == '*' || zeichen == '/' || zeichen == '.' || zeichen == '+' || zeichen == '^' || (zeichen >= '0' && zeichen <= '9')) return 1; //TODO: Fallunterscheidung!
+                else return -1;
             case 12:
                 if (zeichen == '*' || zeichen == '^' || zeichen == 'x' || zeichen == '.' || zeichen == '/') return 1;
                 else if (zeichen == '+' || zeichen == '-') return 8;
@@ -118,6 +121,7 @@ public class Parser {
                     return 1;
                 else if (zeichen == '0') return 14;
                 else if (zeichen >= '1' && zeichen <= '9') return 5;
+                else if(zeichen == 'x') return 2;
                 else return -1;
             case 9:
                 if (zeichen == '+' || zeichen == '-' || zeichen == '*' || zeichen == '/' || zeichen == '.' || zeichen == '0' || zeichen == '^' || zeichen == 'x')
@@ -127,6 +131,75 @@ public class Parser {
         }
         return -1;
 
+    }
+
+    public static double[] parseStringToCoefficients(String s){
+        s = s.replace("*", "");
+
+        double[] polynomial = new double[16];
+
+        List<String> list = new ArrayList<>();
+        String parts[] = s.split("((?=-))|((?=\\+))"); //splittet string, behaelt Delimiter
+
+        for(int i = 0; i<parts.length; i++) { //konstante wird um x^0 erweitert
+
+            if(!(parts[i].contains("x^"))) {
+                if(parts[i].contains("x"))parts[i] = parts[i] + "^1";
+                else parts[i] = parts[i] + "x^0";
+            }
+            if(parts[i].substring(0,1).equals("x")) parts[i] = "1"+parts[i];
+            else if(parts[i].substring(0,2).equals("-x")){
+                parts[i] = "-1" + parts[i].substring(1, parts[i].length());
+            }
+            if(parts[i].contains("/")){
+                double zaehler = Double.parseDouble(parts[i].substring(0,parts[i].indexOf('/')));
+                double nenner = Double.parseDouble(parts[i].substring(parts[i].indexOf('/')+1, parts[i].indexOf('x')));
+            }
+        }//Konstante Formatieren
+
+
+
+        if(!parts[0].substring(0,1).equals("+") && !parts[0].substring(0,1).equals("-")){ //fügt + am Anfang hinzu
+            parts[0] = "+" + parts[0];
+        }
+
+        int biggest_exponent = 0;
+        for(int i = 0; i<parts.length; i++) {
+            if(Integer.parseInt(parts[i].substring(parts[i].length() - 1)) > biggest_exponent) {
+                biggest_exponent = Integer.parseInt(parts[i].substring(parts[i].length() - 1));
+            }
+        }
+
+        boolean is_exponent = false;
+        for(int j = biggest_exponent; j>=0;j--){
+            for(int i = 0; i<parts.length; i++) {
+                if(Integer.parseInt(parts[i].substring(parts[i].length() - 1)) == j) {
+                    list.add(parts[i]);
+                    is_exponent = true;
+                }
+            }
+            if(is_exponent == false){
+                list.add("+0x^" + Integer.toString(j));
+            }
+            is_exponent = false;
+        }
+        for(int k = list.size()-1; k>=0;k--){
+            String coefficient = list.get(k).split("x")[0];
+            if(coefficient.contains("/")){
+                double zaehler = Double.parseDouble(coefficient.substring(0,coefficient.indexOf('/')));
+                double nenner = Double.parseDouble(coefficient.substring(coefficient.indexOf('/')+1, coefficient.length()));
+                polynomial[list.size()-1 - k] = zaehler/nenner;
+            }else{
+                polynomial[list.size()-1 - k] = Double.parseDouble(coefficient);
+            }
+        }
+
+
+        return polynomial;
+    }
+
+    public static void main(String[] args) {
+        parseStringToCoefficients("-1/2x^3");
     }
 
 }

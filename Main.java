@@ -1,4 +1,5 @@
 import Parser.Parser;
+import Plotter.PlotPlane;
 import UI.MessagePanel;
 import com.formdev.flatlaf.FlatDarculaLaf;
 
@@ -13,6 +14,7 @@ public class Main {
             throw new RuntimeException(e);
         }
         SwingUtilities.updateComponentTreeUI(window.getContentPane());
+        window.setResizable(false);
         window.setVisible(true);
 
         window.plotButton.addActionListener(new java.awt.event.ActionListener() {
@@ -22,13 +24,23 @@ public class Main {
                 int validity = Parser.getValidity(input);
 
                 if(validity == 0){
-                    int[] coefficients = Parser.parseStringToCoefficients(window.inputTextField.getText());
-                    window.plotPane = Plotter.Plotter.getPlotPlaneFromCoefficients(coefficients);
+
+                    window.plotPane.removeAll();
+                    double[] coefficients = Parser.parseStringToCoefficients(window.inputTextField.getText());
+                    PlotPlane res = new Plotter.PlotPlane(coefficients);
+                    res.setSize(window.plotPane.getSize());
+                    window.plotPane.add(res);
+                    window.revalidate();
                     window.repaint();
-                    window.pack();
                 }else{
-                    window.plotPane = new MessagePanel("Fehler " + validity);
-                    System.out.println("hallo");
+
+                    window.plotPane.removeAll();
+                    JPanel messagePanel = new MessagePanel(validity);
+                    messagePanel.setSize(window.plotPane.getSize());
+                    window.plotPane.add(messagePanel);
+                    window.revalidate();
+                    window.repaint();
+
                 }
 
             }

@@ -4,6 +4,8 @@
  */
 package UI;
 
+import java.awt.*;
+
 /**
  *
  * @author christophbarth

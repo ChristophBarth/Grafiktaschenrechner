@@ -1,0 +1,1015 @@
+﻿{
+  "name": "Automat 1",
+  "description": "",
+  "type": "DEA",
+  "automaton": {
+    "Alphabet": [
+      "*",
+      "+",
+      "-",
+      ".",
+      "/",
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "^",
+      "x"
+    ],
+    "States": [
+      {
+        "ID": 1,
+        "Name": "0",
+        "Start": true,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 1,
+            "Target": 2,
+            "Labels": [
+              "x"
+            ],
+            "x": 0,
+            "y": 0
+          },
+          {
+            "Source": 1,
+            "Target": 4,
+            "Labels": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9"
+            ],
+            "x": 0,
+            "y": 0
+          },
+          {
+            "Source": 1,
+            "Target": 3,
+            "Labels": [
+              "+",
+              "-"
+            ],
+            "x": 0,
+            "y": 0
+          },
+          {
+            "Source": 1,
+            "Target": 17,
+            "Labels": [
+              "0"
+            ],
+            "x": 0,
+            "y": 0
+          },
+          {
+            "Source": 1,
+            "Target": 8,
+            "Labels": [
+              "*"
+            ],
+            "x": 0,
+            "y": 0
+          },
+          {
+            "Source": 1,
+            "Target": 18,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              ".",
+              "/",
+              "^"
+            ]
+          }
+        ],
+        "x": 150,
+        "y": 150
+      },
+      {
+        "ID": 4,
+        "Name": "5",
+        "Start": false,
+        "Final": true,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 4,
+            "Target": 4,
+            "Labels": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9"
+            ],
+            "x": 0,
+            "y": 40
+          },
+          {
+            "Source": 4,
+            "Target": 2,
+            "Labels": [
+              "x"
+            ],
+            "x": 0,
+            "y": 0
+          },
+          {
+            "Source": 4,
+            "Target": 5,
+            "Labels": [
+              "."
+            ],
+            "x": 0,
+            "y": 0
+          },
+          {
+            "Source": 4,
+            "Target": 3,
+            "Labels": [
+              "+",
+              "-"
+            ],
+            "x": 110,
+            "y": 0
+          },
+          {
+            "Source": 4,
+            "Target": 8,
+            "Labels": [
+              "*"
+            ],
+            "x": 0,
+            "y": 0
+          },
+          {
+            "Source": 4,
+            "Target": 9,
+            "Labels": [
+              "/"
+            ],
+            "x": 0,
+            "y": 0
+          },
+          {
+            "Source": 4,
+            "Target": 18,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              "^"
+            ]
+          }
+        ],
+        "x": 810,
+        "y": 810
+      },
+      {
+        "ID": 11,
+        "Name": "14",
+        "Start": false,
+        "Final": true,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 11,
+            "Target": 5,
+            "Labels": [
+              "."
+            ],
+            "x": 0,
+            "y": 0
+          },
+          {
+            "Source": 11,
+            "Target": 2,
+            "Labels": [
+              "x"
+            ],
+            "x": 0,
+            "y": 0
+          },
+          {
+            "Source": 11,
+            "Target": 9,
+            "Labels": [
+              "/"
+            ],
+            "x": 0,
+            "y": 0
+          },
+          {
+            "Source": 11,
+            "Target": 12,
+            "Labels": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9"
+            ],
+            "x": 0,
+            "y": 0
+          },
+          {
+            "Source": 11,
+            "Target": 18,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              "*",
+              "+",
+              "-",
+              "^"
+            ]
+          }
+        ],
+        "x": 1030,
+        "y": 590
+      },
+      {
+        "ID": 2,
+        "Name": "2",
+        "Start": false,
+        "Final": true,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 2,
+            "Target": 3,
+            "Labels": [
+              "+",
+              "-"
+            ],
+            "x": 220,
+            "y": 0
+          },
+          {
+            "Source": 2,
+            "Target": 13,
+            "Labels": [
+              "^"
+            ],
+            "x": 0,
+            "y": 0
+          },
+          {
+            "Source": 2,
+            "Target": 18,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              "*",
+              ".",
+              "/",
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "x"
+            ]
+          }
+        ],
+        "x": 1250,
+        "y": 810
+      },
+      {
+        "ID": 17,
+        "Name": "15",
+        "Start": false,
+        "Final": true,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 17,
+            "Target": 5,
+            "Labels": [
+              "."
+            ],
+            "x": 0,
+            "y": 0
+          },
+          {
+            "Source": 17,
+            "Target": 2,
+            "Labels": [
+              "x"
+            ],
+            "x": 0,
+            "y": 0
+          },
+          {
+            "Source": 17,
+            "Target": 9,
+            "Labels": [
+              "/"
+            ],
+            "x": 0,
+            "y": 0
+          },
+          {
+            "Source": 17,
+            "Target": 18,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              "*",
+              "+",
+              "-",
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "^"
+            ]
+          }
+        ],
+        "x": 1030,
+        "y": 150
+      },
+      {
+        "ID": 14,
+        "Name": "12",
+        "Start": false,
+        "Final": true,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 14,
+            "Target": 15,
+            "Labels": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9"
+            ],
+            "x": 0,
+            "y": 0
+          },
+          {
+            "Source": 14,
+            "Target": 3,
+            "Labels": [
+              "+",
+              "-"
+            ],
+            "x": 0,
+            "y": 0
+          },
+          {
+            "Source": 14,
+            "Target": 18,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              "*",
+              ".",
+              "/",
+              "^",
+              "x"
+            ]
+          }
+        ],
+        "x": 1250,
+        "y": 370
+      },
+      {
+        "ID": 10,
+        "Name": "16",
+        "Start": false,
+        "Final": true,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 10,
+            "Target": 10,
+            "Labels": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9"
+            ],
+            "x": -40,
+            "y": 0
+          },
+          {
+            "Source": 10,
+            "Target": 2,
+            "Labels": [
+              "x"
+            ],
+            "x": 0,
+            "y": 0
+          },
+          {
+            "Source": 10,
+            "Target": 3,
+            "Labels": [
+              "+",
+              "-"
+            ],
+            "x": 0,
+            "y": 0
+          },
+          {
+            "Source": 10,
+            "Target": 8,
+            "Labels": [
+              "*"
+            ],
+            "x": 0,
+            "y": 0
+          },
+          {
+            "Source": 10,
+            "Target": 18,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              ".",
+              "/",
+              "^"
+            ]
+          }
+        ],
+        "x": 590,
+        "y": 1030
+      },
+      {
+        "ID": 15,
+        "Name": "6",
+        "Start": false,
+        "Final": true,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 15,
+            "Target": 3,
+            "Labels": [
+              "+",
+              "-"
+            ],
+            "x": 0,
+            "y": 0
+          },
+          {
+            "Source": 15,
+            "Target": 18,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              "*",
+              ".",
+              "/",
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "^",
+              "x"
+            ]
+          }
+        ],
+        "x": 150,
+        "y": 1030
+      },
+      {
+        "ID": 18,
+        "Name": "1",
+        "x": 1030,
+        "y": 810,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 18,
+            "Target": 18,
+            "x": 0,
+            "y": 40,
+            "Labels": [
+              "*",
+              "+",
+              "-",
+              ".",
+              "/",
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "^",
+              "x"
+            ]
+          }
+        ],
+        "Start": false
+      },
+      {
+        "ID": 3,
+        "Name": "8",
+        "Start": false,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 3,
+            "Target": 4,
+            "Labels": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9"
+            ],
+            "x": 110,
+            "y": 0
+          },
+          {
+            "Source": 3,
+            "Target": 2,
+            "Labels": [
+              "x"
+            ],
+            "x": 220,
+            "y": 0
+          },
+          {
+            "Source": 3,
+            "Target": 11,
+            "Labels": [
+              "0"
+            ],
+            "x": 0,
+            "y": 0
+          },
+          {
+            "Source": 3,
+            "Target": 18,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              "*",
+              "+",
+              "-",
+              ".",
+              "/",
+              "^"
+            ]
+          }
+        ],
+        "x": 370,
+        "y": 150
+      },
+      {
+        "ID": 12,
+        "Name": "3",
+        "Start": false,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 12,
+            "Target": 12,
+            "Labels": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9"
+            ],
+            "x": 0,
+            "y": 40
+          },
+          {
+            "Source": 12,
+            "Target": 9,
+            "Labels": [
+              "/"
+            ],
+            "x": 0,
+            "y": 0
+          },
+          {
+            "Source": 12,
+            "Target": 18,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              "*",
+              "+",
+              "-",
+              ".",
+              "^",
+              "x"
+            ]
+          }
+        ],
+        "x": 590,
+        "y": 810
+      },
+      {
+        "ID": 6,
+        "Name": "10",
+        "Start": false,
+        "Final": true,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 6,
+            "Target": 2,
+            "Labels": [
+              "x"
+            ],
+            "x": 0,
+            "y": 0
+          },
+          {
+            "Source": 6,
+            "Target": 3,
+            "Labels": [
+              "+",
+              "-"
+            ],
+            "x": 0,
+            "y": 0
+          },
+          {
+            "Source": 6,
+            "Target": 6,
+            "Labels": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9"
+            ],
+            "x": 0,
+            "y": -40
+          },
+          {
+            "Source": 6,
+            "Target": 7,
+            "Labels": [
+              "0"
+            ],
+            "x": 50,
+            "y": 0
+          },
+          {
+            "Source": 6,
+            "Target": 8,
+            "Labels": [
+              "*"
+            ],
+            "x": 0,
+            "y": 0
+          },
+          {
+            "Source": 6,
+            "Target": 18,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              ".",
+              "/",
+              "^"
+            ]
+          }
+        ],
+        "x": 1030,
+        "y": 370
+      },
+      {
+        "ID": 8,
+        "Name": "11",
+        "Start": false,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 8,
+            "Target": 2,
+            "Labels": [
+              "x"
+            ],
+            "x": 0,
+            "y": 0
+          },
+          {
+            "Source": 8,
+            "Target": 18,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              "*",
+              "+",
+              "-",
+              ".",
+              "/",
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "^"
+            ]
+          }
+        ],
+        "x": 370,
+        "y": 590
+      },
+      {
+        "ID": 13,
+        "Name": "13",
+        "Start": false,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 13,
+            "Target": 14,
+            "Labels": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9"
+            ],
+            "x": 0,
+            "y": 0
+          },
+          {
+            "Source": 13,
+            "Target": 15,
+            "Labels": [
+              "0"
+            ],
+            "x": 0,
+            "y": 0
+          },
+          {
+            "Source": 13,
+            "Target": 18,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              "*",
+              "+",
+              "-",
+              ".",
+              "/",
+              "^",
+              "x"
+            ]
+          }
+        ],
+        "x": 1250,
+        "y": 1030
+      },
+      {
+        "ID": 5,
+        "Name": "7",
+        "Start": false,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 5,
+            "Target": 6,
+            "Labels": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9"
+            ],
+            "x": 0,
+            "y": 0
+          },
+          {
+            "Source": 5,
+            "Target": 7,
+            "Labels": [
+              "0"
+            ],
+            "x": 0,
+            "y": 0
+          },
+          {
+            "Source": 5,
+            "Target": 18,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              "*",
+              "+",
+              "-",
+              ".",
+              "/",
+              "^",
+              "x"
+            ]
+          }
+        ],
+        "x": 810,
+        "y": 590
+      },
+      {
+        "ID": 9,
+        "Name": "9",
+        "Start": false,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 9,
+            "Target": 10,
+            "Labels": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9"
+            ],
+            "x": 0,
+            "y": 0
+          },
+          {
+            "Source": 9,
+            "Target": 18,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              "*",
+              "+",
+              "-",
+              ".",
+              "/",
+              "0",
+              "^",
+              "x"
+            ]
+          }
+        ],
+        "x": 1250,
+        "y": 590
+      },
+      {
+        "ID": 7,
+        "Name": "4",
+        "Start": false,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 7,
+            "Target": 3,
+            "Labels": [
+              "+",
+              "-"
+            ],
+            "x": 0,
+            "y": 0
+          },
+          {
+            "Source": 7,
+            "Target": 7,
+            "Labels": [
+              "0"
+            ],
+            "x": 0,
+            "y": -40
+          },
+          {
+            "Source": 7,
+            "Target": 6,
+            "Labels": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9"
+            ],
+            "x": 50,
+            "y": 0
+          },
+          {
+            "Source": 7,
+            "Target": 18,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              "*",
+              ".",
+              "/",
+              "^",
+              "x"
+            ]
+          }
+        ],
+        "x": 810,
+        "y": 370
+      }
+    ],
+    "acceptCache": [],
+    "simulationInput": [],
+    "StackAlphabet": [
+      "|"
+    ],
+    "lastInputs": [],
+    "allowPartial": false
+  }
+}
